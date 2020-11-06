@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="change_pw.php" method="POST">
+        비밀번호 : <input type="password" name ="changedPw" id="changedPw"><br><br>
+        <input type="submit" value="제출">
+        <button onclick="clear()">초기화</button>
+    </form>
+    <script>
+        function clear(){
+            document.getElementById("changedPw").innerHTML = null;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    로그인 및 회원 가입하기<br><br>
+    <form name="myForm">
+    아이디 : <input type="text" id="userId" name ="userId"
+    pattern="^([A-Za-z0-9]){6,15}"><br><br>
+    비밀번호 : <input type="password" id="userPw" name="userPw" required="required"
+    pattern=".*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*"><br><br>
+    <button id ="login" name="BT_login" onclick="submitType(1)">로그인</button>
+    <button id="signUp" name="BT_signUp" onclick="submitType(2)">회원가입</button>
+    <button id="reset" name="BT_reset" onclick="reset()">초기화</button>
+    </form>
+
+    <script >
+        function submitType(type){
+            if(type==1){
+                document.myForm.action = "login.php";
+                document.myForm.method = "POST";
+            }if(type==2){
+                document.myForm.action = "signUp.php";
+                document.myForm.method = "POST";
+            }
+        }
+        function reset(){
+            document.getElementById("userId").innerHTML =null;
+            document.getElementById("userPw").innerHTML =null;
+        }
+    </script>
+</body>
+</html>
