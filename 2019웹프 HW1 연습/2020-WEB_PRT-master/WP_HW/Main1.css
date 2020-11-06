@@ -1,0 +1,48 @@
+#big{
+    color : red;
+    font-size : 40px;
+    text-align: center;
+    font-family: 'Arial Black','Gadget','sans-serif';
+    margin-bottom: 10%;
+}
+
+#second{
+    color : darkcyan;
+    font-size : 40px;
+    text-align: center;
+}
+
+#input{
+    background-color: lightblue;
+    margin-left: 40%;
+    border: 5px solid darkblue;
+    width : 400;
+}
+
+.small{
+    color : green;
+}
+
+.small:visited{
+    color : gray;
+}
+
+.small:hover{
+    color : goldenrod;
+}
+
+.small:active{
+    color : pink;
+}
+table,tr,td{
+    border : 1px solid Black;
+    text-align : center;
+    border-collapse:collapse;
+    padding : 15px;
+}
+
+#firstValue{
+    color : white;
+    background-color : green;
+    font-weight: bold;
+}

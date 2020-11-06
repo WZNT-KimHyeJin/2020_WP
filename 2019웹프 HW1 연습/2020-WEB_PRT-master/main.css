@@ -1,0 +1,30 @@
+#big{
+    color :red;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Arial Black', 'Gadget', 'sans-serif';
+    margin-bottom: 10%;
+}
+#second{
+    color :darkcyan;
+    font-size: 40px;
+    text-align: center;
+}
+#input{
+ background-color: lightblue;
+ margin-left: 37%;
+ border:5px solid darkblue;
+ width: 400px;   
+}
+.small{
+    color: green;
+}
+.small:visited{
+    color : gray;
+}
+.small:hover{
+    color : goldenrod;
+}
+.small:active{
+    color: pink;
+}
