@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-sc">
+    <title>201902679 김혜진</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- 1번 -->
+    <h1 id ="cart_border">
+        <i class="material-icons" id ="icon" >shopping_cart</i>
+    </h1>
+    
+    <div id = modalBack>
+        <div id = addModal>
+            <h2 id="addTitle">상품 장바구니 등록</h2>
+            상품 이미지 : <input type="file" id="proImg"><br>
+            상품 이름 : <input type="text" id="proName"><br>
+            상품 가격 : <input type="text" id="proPrice"><br>
+            상품 개수 : <input type="text" id="proNum"> 최대 50개 이하까지 선택 가능        
+            배송 방법 : <input type="radio" name="del" class="del" id="orgDel"> <label for="orgDel">일반 배송</label> 
+            <input type="radio" name="del" class="del" id="dawnDel"> <label for="dawnDel">새벽 배송 </label>
+            <br>
+            <br>
+            <button id="addBtn">장바구니 담기</button> <button id="addCancleBtn">취소</button>
+        </div>
+    </div>
+
+    <!-- 2번 -->
+    일반배송 : 
+    <input type="checkbox" id="org_allChoose"><label for="org_allChoose">전체선택</label>
+    <input type="button" value="선택 삭제" id="org_deleteBtn">
+    <input type="button" value="새벽 배송으로 이동" id="moveToDawn">
+    <br>
+    <br>
+
+
+    <table>
+        <thead>
+            <tr>
+                <td>선택</td>
+                <td>상품 이미지</td>
+                <td >상품 이름</td>
+                <td >상품 개별 가격</td>
+                <td>상품 개수</td>
+                <td>상품 구매 가격</td>
+            </tr>
+        </thead>
+        <tbody id ="orgTbody">
+        </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">총 가격</td>
+                    <td id = "org_total_price"></td>
+                </tr>
+            </tfoot>
+    </table>
+    <br>
+    <br>
+
+    새벽배송 : 
+    <input type="checkbox" id ="dawn_allChoose"><label for="dawn_allChoose">전체 선택</label>
+    <input type="button" value="선택 삭제" id ="dawn_deleteBtn">
+    <input type="button" value="일반 배송으로 이동" id="moveToOrg">
+    <br>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <td>선택</td>
+                <td>상품 이미지</td>
+                <td >상품 이름</td>
+                <td >상품 개별 가격</td>
+                <td >상품 개수</td>
+                <td >상품 구매 가격</td>
+            </tr>
+        </thead>
+        <tbody id="dawnTbody"></tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">총 가격</td>
+                <td id="dawn_total_price"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <br>
+
+    상품 이름 : 
+    <input type="text" id="searchByText"><br>
+    가격 범위 : <input type="text" id="min"> ~ <input type="text" id="max">
+    <br>
+    <br>
+
+    <button id="searchBtn">검색</button>
+    <button id ="resetColor">원래 색으로 바꾸기</button>
+    
+
+    
+    <script src="js.js"></script>
+</body>
+</html>
