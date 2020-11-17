@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type = "text/javascript">
+
+        $(document).ready(function(){
+                $("button").click(function(){
+                    $.post("main.php",
+                    {
+                        title : $('#c_Title').val(),
+                        content : $('#c_Contents').val()
+                    },
+                    function(data){
+                        alert(data);
+                        alert("저장되었습니다.");
+                    });
+                });
+
+            $("#key").on("propertychange change keyup paste input",function(){
+                var obj = {
+                    key : $("#key").val()
+                }
+                var changed = JSON.stringify(obj);
+                alert(changed);
+
+                $.post("search.php",{
+                    key : $("#key").val()
+                },
+                function(data){
+                    alert(data);
+                    $("#list").empty();
+                    var parsed = JSON.parse(data);
+                    parsed.forEach(element => {
+                    var $listContext = $('<li>'+element+'</li>');
+                    $("#list").append($listContext);
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<form>
+    글 제목 : <input type="text" name ="c_Title" id="c_Title"><br><br>
+    글 내용 : <textarea rows="8" name="c_Contents" id="c_Contents"></textarea> <br><br>
+    <button>저장</button>
+</form>
+<h3>Start typing the title of a article in the input field below:</h3>
+
+Keyword: <input type="text" id="key">
+
+<h3>Recommended article title: </h3>
+<ul id ="list"></ul>
+</body>
+</html>
