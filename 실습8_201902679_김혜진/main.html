@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <button id ="start_btn">start</button> Timer : <output id="timerCount"></output>
+    <br><br>
+    이미지 파일 선택 
+    <input type="file" id="fileChoose">
+    <br>
+    <button id="addimg" disabled>이미지 추가</button>
+    <br>
+    <br>
+    <div id="Imgs" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    A 바구니
+    <br>
+    <div id ="bk_A" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    </div>
+    <br>
+    <br>
+    B 바구니
+    <br>
+    <br>
+    <div id ="bk_B" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
