@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="addBackDiv">
+        <div id="addDiv">
+            date <input type="date" id="add_date"> <input type="time" id="add_time">
+            <br>
+            title <input type="text" id="add_title">
+            <br>
+            description <input type="text" id="add_description">
+            <br>
+            <button id="saveBtn">Save</button> 
+            <button disabled id="updataBtn">Update</button> 
+            <button disabled id="submitBtn">Submit</button> 
+            <button disabled id="deleteBtn">Delete</button> 
+            <button id="cancleBtn">Cancle</button>
+        </div>
+    </div>
+    <div id="joinBackDiv">
+        <div id="joinDiv">
+                <div id="idDiv" class="joins">id 
+                    <input type="text" id="inputId" name="userId">
+                </div>
+                <div id="pwDiv" class="joins">passsword 
+                    <input type="password" id="inputPw" name="userPw" required="required">
+                </div>
+                    
+                    <button id="loginBtn" value="Login">Login</button>
+                    <button id="signInBtn" value="SignIn">SignIn</button>
+        </div>
+    </div>
+    <div id=topDiv>
+        <br>
+        <button id="addBtn" disabled>Add</button>
+        <button id ="LogoutBtn">Logout</button>
+        <button id="joinBtn">Join</button>
+        <span id="logined_Id"></span>
+    </div>
+    
+    <div>
+        <br>
+        <br>
+        <br>
+        <div id="dataDiv">
+            <span id="yearSpan" class="date"></span>년 
+            <span id="monthSpan" class="date"></span>월
+        </div>
+        <div>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th class="table_head"><span  class="dates"></span>(Sun)</th>
+                        <th class="table_head"><span  class="dates"></span>(Mon)</th>
+                        <th class="table_head"><span  class="dates"></span>(Tue)</th>
+                        <th class="table_head"><span  class="dates"></span>(Wed)</th>
+                        <th class="table_head"><span  class="dates"></span>(Thu)</th>
+                        <th class="table_head"><span  class="dates"></span>(Fri)</th>
+                        <th class="table_head"><span  class="dates"></span>(Sat)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table_data"></td>
+                        <td class="table_data"></td>
+                        <td class="table_data"></td>
+                        <td class="table_data"></td>
+                        <td class="table_data"></td>
+                        <td class="table_data"></td>
+                        <td class="table_data"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
