@@ -4,54 +4,63 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $firstEncoded = json_encode($_POST);
     $decoded = json_decode($firstEncoded, true);
 
-    $dataArr = array();
-    $dataArr[0] = $decoded["sun"];
-    $dataArr[1] = $decoded["mon"];
-    $dataArr[2] = $decoded["tue"];
-    $dataArr[3] = $decoded["wed"];
-    $dataArr[4] = $decoded["thu"];
-    $dataArr[5] = $decoded["fri"];
-    $dataArr[6] = $decoded["sat"];
+    $data = $decoded["day"];
+    $num = $decoded["num"];
     
-    $dataArr[0] = json_decode($dataArr[0], true);
-    $dataArr[1] = json_decode($dataArr[1], true);
-    $dataArr[2] = json_decode($dataArr[2], true);
-    $dataArr[3] = json_decode($dataArr[3], true);
-    $dataArr[4] = json_decode($dataArr[4], true);
-    $dataArr[5] = json_decode($dataArr[5], true);
-    $dataArr[6] = json_decode($dataArr[6], true);
-
-
+    $data = json_decode($data, true);
     $userID =  $_SESSION["userID"];
 
-for($i =0; $i<7; $i++){
-    $day = $dataArr[$i];
 
     $returnArr = array();
-    $fileName = "./toDoList/".$userID."_".$day["fileName"].".json";
+    $arrCount =0;
+    $fileName = "./toDoList/".$userID."_".$data["fileName"].".json";
+    $returnData = array();
     
     if(file_exists($fileName)){
-        $myfile = fopen($fileName,"r") or die("unable to open file");
-        while(!feof($myfile)){
+        $my = fopen($fileName,"r") or die("unable to open file");
+        while(!feof($my)){
             
-            $fileData = fgets($myfile);
-            $decoded_fileData = json_decode($fileData,true);
-            if( $decoded_fileData["date"]== $day["date"] ){
-                fclose($myfile);
-                $returnArr["title"] = $decoded_fileData["title"];
-                $title = json_encode($returnArr);
-
-                echo $title;
+            $fileData = fgets($my);
+           
+            if($fileData ==" "){
             break;
-            }else{
-                echo 0;
+            }
+            $decoded_fileData = json_decode($fileData,true);
+
+
+            if( $decoded_fileData["date"]== $data["date"] ){
+                $returnData = array("title" => $decoded_fileData["title"], "num" => $num, "date" => $data["date"]);
+                $returnData = json_encode($returnData);
+                $returnArr += array($arrCount => $returnData);
+                $arrCount++;
+                
             }
         }
+        fclose($my);
+
+        if($arrCount>0){
+            $returnArr["title"] = 1;
+            $returnArr = json_encode($returnArr);
+            echo $returnArr;
+            return;
+        }else{
+            $returnArr["title"] = 0;
+            $returnArr = json_encode($returnArr);
+            echo $returnArr;
+            return;
+        }
     }else{
-        echo 0;
+        $returnArr["title"] = 0;
+        $returnArr = json_encode($returnArr);
+
+        echo $returnArr;
+        return;
     }
 
-}
+
+
+    
+
 
    
 }
