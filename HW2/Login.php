@@ -16,8 +16,11 @@
        
 
         $fileName = "./data/person.json";
+
         if(file_exists($fileName)){
+            
             $myFile = fopen($fileName,"r") or die("unable to open file");
+
             while(!feof($myFile)){
                 $file_data = fgets($myFile);
                 $decode = json_decode($file_data,true);
